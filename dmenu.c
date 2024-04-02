@@ -1971,6 +1971,9 @@ main(int argc, char *argv[])
 		} else if (!strcmp(argv[i], "-s")) { /* case-sensitive item matching */
 			fstrncmp = strncmp;
 			fstrstr = strstr;
+		} else if (!strcmp(argv[i], "-i")) { /* case-sensitive item matching */
+			fstrncmp = strncasecmp;
+			fstrstr = cistrstr;
 		#else
 		} else if (!strcmp(argv[i], "-i")) { /* case-insensitive item matching */
 			fstrncmp = strncasecmp;
